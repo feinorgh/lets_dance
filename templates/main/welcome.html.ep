@@ -1,0 +1,7 @@
+% layout 'default';
+% title 'Welcome to the Lets Dance explorer';
+<h1>Let's Dance People</h1>
+<%#
+vim: ts=2 sw=2
+%>
+
