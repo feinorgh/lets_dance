@@ -1,0 +1,10 @@
+% layout undef; # no layout, this is a fragment
+<div class="col-md-4">
+  <img src="<%= $info->{image}{url} %>" class="img-responsive img-rounded" alt="">
+</div>
+<div class="col-md-8">
+  <h2><%= $info->{description} %></h2>
+</div>
+<%#
+vim: ts=2 sw=2
+%>

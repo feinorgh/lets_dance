@@ -1,0 +1,9 @@
+% layout 'default';
+% title 'Let\'s Dance!';
+% use autouse 'Data::Dump' => qw(dd pp);
+<pre>
+<%= pp($info) %>
+</pre>
+<%#
+vim: ts=2 sw=2
+%>

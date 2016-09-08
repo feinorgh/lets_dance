@@ -1,0 +1,16 @@
+% layout 'default';
+% title 'Let\'s Dance Participants';
+% use autouse 'Data::Dump' => qw(dd pp);
+
+<h1>Let's Dance People</h1>
+  % for my $participant ( @{ $info->{participant_groups}[0]{participants} } ) {
+
+<div class="row">
+    <pre><%= pp($participant) %></pre>
+  %= include 'parts/participant', info => $participant
+</div>
+  % }
+<%#
+vim: ts=2 sw=2
+%>
+

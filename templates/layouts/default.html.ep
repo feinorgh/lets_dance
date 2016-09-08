@@ -6,10 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= title %></title>
     <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dance.css" rel="stylesheet">
   </head>
   <body>
     <div class="container-fluid">
-    <%= content %>
+      <div class="row top-image">
+        <div class="col-md-12">
+          <img src="<%= $info->{top_image} %>" class="img-responsive img-rounded" alt="Top Image">
+        </div>
+        <div class="pull-right well" id="social-links">
+          <a href="<%= $info->{facebook_page_url} %>"><img src="images/FB-f-Logo__blue_50.png" width="48px" alt="Facebook Logo"></a>
+          <a href="<%= $info->{instagram_page_url} %>"><img src="images/instagram.png" width="48px" alt="Instagram Logo"></a>
+          <a href="<%= $info->{youtube_page_url} %>"><img src="images/YouTube-social-squircle_red_48px.png" width="48px" alt="YouTube Logo"></a>
+          <a href="<%= $info->{twitter_page_url} %>"><img src="images/Twitter_Social_Icon_Rounded_Square_Color.svg" width="48px" alt="Twitter SVG Logo"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <a class="btn btn-lg btn-default" href="<%= url_for 'participants' %>">Participants</a>
+        </div>
+      </div>
+      <%= content %>
     </div>
     <script src="/jquery/dist/jquery.min.js"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>

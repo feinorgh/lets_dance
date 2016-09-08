@@ -1,24 +1,34 @@
 package LetsDance;
 use Mojo::Base 'Mojolicious';
+use Mojo::UserAgent;
 use autouse 'Data::Dump' => qw(dd pp);
 
+my $_useragent;
+
+has 'useragent' => sub {
+    if ( !defined $_useragent ) {
+        $_useragent = Mojo::UserAgent->new;
+    }
+    return $_useragent;
+};
 
 # This method will run once at server start
 sub startup {
-  my $self = shift;
+    my $self = shift;
 
-  # Documentation browser under "/perldoc"
-  $self->plugin('PODRenderer');
+    # Documentation browser under "/perldoc"
+    $self->plugin('PODRenderer');
 
-  # add node_modules to static routes so we can serve these files
-  # painlessly
-  push @{ $self->static->paths }, $self->home . '/node_modules';
+    # add node_modules to static routes so we can serve these files
+    # painlessly
+    push @{ $self->static->paths }, $self->home . '/node_modules';
 
-  # Router
-  my $r = $self->routes;
+    # Router
+    my $r = $self->routes;
 
-  # Normal route to controller
-  $r->get('/')->to('main#welcome');
+    # Normal route to controller
+    $r->get('/')->to('main#program_info');
+    $r->get('/participants')->to('main#participants');
 }
 
 1;
