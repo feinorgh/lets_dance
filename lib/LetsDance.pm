@@ -18,6 +18,8 @@ sub startup {
     # Documentation browser under "/perldoc"
     $self->plugin('PODRenderer');
 
+    $self->plugin('Config');
+
     # add node_modules to static routes so we can serve these files
     # painlessly
     push @{ $self->static->paths }, $self->home . '/node_modules';
