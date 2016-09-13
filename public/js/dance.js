@@ -5,7 +5,7 @@
 
 function loadVideoList(target, tag, page) {
     'use strict';
-    $.get('/videolist/' + tag,
+    $.get('videolist/' + tag,
             { page : page }
     )
     .done(function(fragment) {

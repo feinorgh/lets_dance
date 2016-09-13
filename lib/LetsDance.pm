@@ -20,6 +20,17 @@ sub startup {
 
     $self->plugin('Config');
 
+    # Move first part and slash from path to base path in production mode
+    if ( $self->mode eq 'production' ) {
+        $self->hook(
+            before_dispatch => sub {
+                my $c = shift;
+                push @{ $c->req->url->base->path->trailing_slash(1) },
+                  shift @{ $c->req->url->path->leading_slash(0) };
+            }
+        );
+    }
+
     # add node_modules to static routes so we can serve these files
     # painlessly
     push @{ $self->static->paths }, $self->home . '/node_modules';

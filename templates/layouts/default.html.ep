@@ -1,3 +1,4 @@
+% my $base_url = url_for q{/};
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= title %></title>
-    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/dance.css" rel="stylesheet">
+    <link href="<%= $base_url %>/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%= $base_url %>/css/dance.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -56,9 +57,9 @@
         <p class="text-muted">Written by Pär Karlsson</p>
       </div>
     </footer>
-    <script src="/jquery/dist/jquery.min.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/js/dance.js"></script>
+    <script src="<%= $base_url %>/jquery/dist/jquery.min.js"></script>
+    <script src="<%= $base_url %>/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<%= $base_url %>/js/dance.js"></script>
   </body>
 </html>
 <%#
