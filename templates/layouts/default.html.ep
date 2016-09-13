@@ -39,10 +39,10 @@
           <img src="<%= $info->{top_image} %>" class="img-responsive img-rounded" alt="Top Image">
         </div>
         <div class="pull-right well" id="social-links">
-          <a href="<%= $info->{facebook_page_url} %>"><img src="images/FB-f-Logo__blue_50.png" width="48px" alt="Facebook Logo"></a>
-          <a href="<%= $info->{instagram_page_url} %>"><img src="images/instagram.png" width="48px" alt="Instagram Logo"></a>
-          <a href="<%= $info->{youtube_page_url} %>"><img src="images/YouTube-social-squircle_red_48px.png" width="48px" alt="YouTube Logo"></a>
-          <a href="<%= $info->{twitter_page_url} %>"><img src="images/Twitter_Social_Icon_Rounded_Square_Color.svg" width="48px" alt="Twitter SVG Logo"></a>
+          <a href="<%= $info->{facebook_page_url} %>"><img src="<%= $base_url %>/images/FB-f-Logo__blue_50.png" width="48px" alt="Facebook Logo"></a>
+          <a href="<%= $info->{instagram_page_url} %>"><img src="<%= $base_url %>/images/instagram.png" width="48px" alt="Instagram Logo"></a>
+          <a href="<%= $info->{youtube_page_url} %>"><img src="<%= $base_url %>/images/YouTube-social-squircle_red_48px.png" width="48px" alt="YouTube Logo"></a>
+          <a href="<%= $info->{twitter_page_url} %>"><img src="<%= $base_url %>/images/Twitter_Social_Icon_Rounded_Square_Color.svg" width="48px" alt="Twitter SVG Logo"></a>
         </div>
       </div>
       <div class="row">
