@@ -1,4 +1,7 @@
-% my $base_url = url_for q{/};
+% my $base_url = q{};
+% if ( $self->app->mode eq 'production' ) {
+%   $base_url = url_for q{/};
+% }
 <!DOCTYPE html>
 <html lang="en">
   <head>
