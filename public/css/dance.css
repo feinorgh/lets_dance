@@ -4,8 +4,20 @@ div.top-image {
 
 #social-links {
     position : absolute;
-    right : 24px;
+    right : 26px;
     bottom : 10px;
     padding : 8px;
     margin : 0;
+}
+
+div.participant-presentation {
+    position : relative;
+}
+
+h1.participant-name {
+    position : absolute;
+    text-shadow : 0 0 0.5em white;
+    margin : 0;
+    top : 0.5em;
+    left : 1em;
 }

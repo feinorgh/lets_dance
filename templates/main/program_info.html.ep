@@ -1,9 +1,18 @@
 % layout 'default';
 % title 'Let\'s Dance!';
-% use autouse 'Data::Dump' => qw(dd pp);
-<pre>
-<%= pp($info) %>
-</pre>
+% for my $teaser ( @{ $info->{top_block}{teasers} } ) {
+<div class="media">
+  <div class="media-left">
+    <a href="<%= $teaser->{link_url} %>">
+      <img src="<%= $teaser->{image} %>" width="384px" class="media-object" alt="<%= $teaser->{image} %>">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= $teaser->{heading} %></h4>
+    <p><%= $teaser->{lead} %></p>
+  </div>
+</div>
+% }
 <%#
 vim: ts=2 sw=2
 %>

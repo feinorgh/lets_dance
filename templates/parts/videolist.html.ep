@@ -1,0 +1,42 @@
+% layout undef; # no layout, this is a fragment
+<div class="container">
+  <div class="col-md-3"">
+    <nav aria-label="Video Navigation">
+      <ul class="pagination">
+        <li class="<%= $page == 1 ? 'disabled' : q{} %>">
+          <a class="videopage" data-page="<%= $page - 1 %>" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        % for my $p ( 1 .. $pages ) {
+        <li class="<%= $p eq $page ? 'active' : q{} %>"><a class="videopage" data-page="<%= $p %>" href="#"><%= $p %></a></li>
+        % }
+        <li class="<%= $page == $pages ? 'disabled' : q{} %>">
+          <a class="videopage" data-page="<%= $page + 1 %>" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-md-3">
+    <h4><%= scalar @{ $videolist } %> / <%= $total_hits %> videos found</h4>
+  </div>
+</div>
+% for my $video ( @{ $videolist } ) {
+<div class="media">
+  <div class="media-left">
+    <a href="http://www.tv4play.se/program/lets-dance?video_id=<%= $video->{id} %>">
+      <img class="media-object img-rounded" width="128px" src="<%= $video->{image} %>" alt="<%= $video->{image} %>">
+    </a>
+  </div>
+  <div class="media-body">
+    <h3 class="media-heading"><%= $video->{title} %></h3>
+    <p class="list-group-item-text"><%= $video->{description} %></p>
+  </div>
+</div>
+% }
+</div>
+<%#
+vim: ts=2 sw=2
+%>
