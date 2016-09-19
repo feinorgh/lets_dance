@@ -1,7 +1,6 @@
 package LetsDance::Controller::Main;
 use Mojo::Base 'Mojolicious::Controller';
 use Mojo::JSON qw(decode_json encode_json);
-use autouse 'Data::Dump' => qw(dd pp);
 
 sub program_info {
     my $self = shift;
@@ -32,9 +31,8 @@ sub get_videolist {
               . $person_tag => form => { page => $page }
         )->res->body
     );
-    $self->app->log->debug( pp($videoinfo) );
-    my @results     = @{ $videoinfo->{results} };
-    my $max_results = $self->cookie('max_results');
+    my @results = @{ $videoinfo->{results} };
+    my $max_results = $self->cookie('max_results') || 1;
 
     if ( @results > $max_results ) {
         $max_results = scalar @results;

@@ -55,9 +55,10 @@
       <hr>
       <%= content %>
     </div>
+    <hr>
     <footer class="footer">
       <div class="container">
-        <p class="text-muted">Written by Pär Karlsson</p>
+        <p class="text-muted">Written by Pär Karlsson 2016 as a demo for the TV4 API</p>
       </div>
     </footer>
     <script src="<%= $base_url %>/jquery/dist/jquery.min.js"></script>
