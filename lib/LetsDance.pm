@@ -1,7 +1,6 @@
 package LetsDance;
 use Mojo::Base 'Mojolicious';
 use Mojo::UserAgent;
-use autouse 'Data::Dump' => qw(dd pp);
 
 my $_useragent;
 has 'useragent' => sub {

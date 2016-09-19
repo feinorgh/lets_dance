@@ -4,8 +4,6 @@ use Test::More;
 use Test::Mojo;
 use Mojo::JSON qw(decode_json);
 
-use autouse 'Data::Dump' => qw(dd pp);
-
 my $t = Test::Mojo->new('LetsDance');
 
 # see if the JSON API entry point is available
