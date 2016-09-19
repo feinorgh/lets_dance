@@ -21,3 +21,4 @@ nytprof.out
 node_modules/*
 *.swp
 log/*.log
+script/hypnotoad.pid
